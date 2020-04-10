@@ -4,6 +4,7 @@
 const logger = require('morgan');
 const express = require('express');
 require('dotenv').config();
+const mongoose = require('mongoose');
 const {fetchData, convertDataToReport} = require('./services')
 
 // Create an Express application
