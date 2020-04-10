@@ -4,17 +4,18 @@
 const logger = require('morgan');
 const express = require('express');
 require('dotenv').config();
-const {fetchPage} = require('./services/fetchData')
+const {fetchData, convertDataToReport} = require('./services')
 
 // Create an Express application
 const app = express();
 
 // Add the Scotch author profile route
-app.get('/test', (req, res, next) => {
+app.get('/test', async (req, res, next) => {
     // const author = req.params.author;
     // sendResponse(res)(fetchAuthorProfile(author));
 
-    fetchPage();
+    let results = await fetchData();
+   convertDataToReport(results);
   });
 
   

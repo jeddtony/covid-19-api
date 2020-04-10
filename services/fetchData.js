@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 
 let fetchedData = null
-const fetchPage = async() => {
+const fetchData = async() => {
     let results = await axios.get(process.env.NCDC_URL);
     fetchedData = results.data;
 
@@ -16,8 +16,9 @@ const tableRows = $('#custom3').map(function(i, el) {
 .join();
 
 // tableRows.map((tablRow, index) => console.log(tablRow.text()));
-console.log(tableRows);
+// console.log(tableRows);
+return tableRows;
 }
 
 
-module.exports =  {fetchPage}
+module.exports =  fetchData
