@@ -3,16 +3,18 @@
 // Require dependencies
 const logger = require('morgan');
 const express = require('express');
-const { sendResponse } = require('./app/helpers');
-const { fetchAuthorProfile } = require('./app/scotch');
+require('dotenv').config();
+const {fetchPage} = require('./services/fetchData')
 
 // Create an Express application
 const app = express();
 
 // Add the Scotch author profile route
-app.get('/scotch/:author', (req, res, next) => {
-    const author = req.params.author;
-    sendResponse(res)(fetchAuthorProfile(author));
+app.get('/test', (req, res, next) => {
+    // const author = req.params.author;
+    // sendResponse(res)(fetchAuthorProfile(author));
+
+    fetchPage();
   });
 
   

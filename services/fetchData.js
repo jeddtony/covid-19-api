@@ -3,7 +3,7 @@ const axios = require('axios');
 
 let fetchedData = null
 const fetchPage = async() => {
-    let results = await axios.get('https://covid19.ncdc.gov.ng/');
+    let results = await axios.get(process.env.NCDC_URL);
     fetchedData = results.data;
 
     const $ = cheerio.load(fetchedData)
@@ -16,7 +16,8 @@ const tableRows = $('#custom3').map(function(i, el) {
 .join();
 
 // tableRows.map((tablRow, index) => console.log(tablRow.text()));
-console.log(typeof(tableRows));
+console.log(tableRows);
 }
 
-fetchPage();
+
+module.exports =  {fetchPage}
