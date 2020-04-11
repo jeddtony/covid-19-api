@@ -33,4 +33,4 @@ const ReportSchema = new Schema({
 },
 { timestamps: true });
 
-module.exports = mongoose.model('ReportSchema', ReportSchema)
+module.exports = mongoose.model('Report', ReportSchema)

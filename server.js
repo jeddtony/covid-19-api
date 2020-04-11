@@ -4,6 +4,8 @@
 const logger = require('morgan');
 const express = require('express');
 require('dotenv').config();
+const cron = require("node-cron");
+
 const mongoose = require('mongoose');
 const {updateDBService} = require('./services')
 
@@ -20,7 +22,11 @@ app.get('/test', async (req, res, next) => {
    updateDBService()
   });
 
-  
+  cron.schedule("* 1 * * *", function() {
+    // console.log("running a task every minute");
+    updateDBService();
+    console.log("Updated database");
+  });
 // Configure the app port
 const port = process.env.PORT || 3000;
 app.set('port', port);
