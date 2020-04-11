@@ -27,9 +27,10 @@ const ReportSchema = new Schema({
     }],
     date: {
         type: Date,
-        required: true
+        required: true,
+        default: new Date()
     }
 },
 { timestamps: true });
 
-module.exports = mongoose.model('Report', ReportSchema)
+module.exports = mongoose.model('ReportSchema', ReportSchema)

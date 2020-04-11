@@ -1,3 +1,3 @@
-import Report from './Report';
+const  ReportSchema = require( './Report');
 
-export{ Report}
+module.exports = { ReportSchema}

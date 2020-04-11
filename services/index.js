@@ -1,4 +1,6 @@
-const fetchData = require('./fetchData');
+const updateDBService = require('./updateDBService');
 const convertDataToReport = require("./convertDataToReport");
+const fetchData = require('./fetchData');
 
-module.exports = {fetchData, convertDataToReport};
+
+module.exports = {updateDBService, convertDataToReport, fetchData};

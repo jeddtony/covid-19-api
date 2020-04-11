@@ -8,7 +8,7 @@ const convertDataToJson = (data) => {
     // console.log(trimString.split('\n                        '));
     substring = substring.split('\n                        ');
     let trimString = _.filter(substring, (n)=> n !== '')
-    joinToString(trimString);
+    return joinToString(trimString);
 }
                
 
@@ -16,7 +16,7 @@ const joinToString = (parsedArray) => {
 
     // console.log(parsedArray.toString())
     let anotherparsed = removeNewLine(parsedArray);
-    console.log(convertArrayToJson(anotherparsed))
+    return convertArrayToJson(anotherparsed);
 }
 
 const removeNewLine = (parsedArray) => {

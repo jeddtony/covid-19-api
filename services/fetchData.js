@@ -2,7 +2,10 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 
 let fetchedData = null
-const fetchData = async() => {
+
+
+const 
+fetchData = async() => {
     let results = await axios.get(process.env.NCDC_URL);
     fetchedData = results.data;
 
