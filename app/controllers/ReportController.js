@@ -12,4 +12,14 @@ const createReport = async (data) => {
     }
 }
 
-module.exports = {createReport}
+const getReport = async (req, res) => {
+    try{
+        const report = new Report();
+        let results = await report.getAllReports();
+        return res.json(results) ;
+    }
+    catch (error) {
+        console.error('Error getting reports ', error);
+    }
+}
+module.exports = {createReport, getReport}

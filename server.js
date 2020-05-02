@@ -14,6 +14,10 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Create an Express application
 const app = express();
 
+const routes = require('./routes');
+
+app.use('/', routes);
+
 // Add the Scotch author profile route
 app.get('/test', async (req, res, next) => {
     // const author = req.params.author;
@@ -21,6 +25,8 @@ app.get('/test', async (req, res, next) => {
 
    updateDBService()
   });
+
+
 
   cron.schedule("* 1 * * *", function() {
     // console.log("running a task every minute");
